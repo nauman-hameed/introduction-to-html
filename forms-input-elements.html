@@ -1,0 +1,54 @@
+<div><!-- Forms and forms -->
+    <form action="">
+        First Name <input type="name" size="20" maxlength="20" required>
+        <br><br>
+        Last Name <input type="name" size="20" maxlength="20" required>
+        <br><br>
+        Email <input type="email" name="" id="" size="25" required>
+        <br><br>
+        <input type="image" src="./Images/pexels-photo-674010.jpeg" height="100px" width="100px">
+        Password <input type="password" size="22" required>
+        <br><br>
+        <br><br>
+        <textarea name="" id="" cols="30" rows="10" placeholder="Your Comment here"></textarea>
+        <br><br>
+        Select One:
+        <input type="radio" name="a" id="a">Bike
+        <input type="radio" name="a" id="a">Cycle
+        <input type="radio" name="a" id="a">Jaaaz
+        <br><br>
+        <input type="date" name="" id="">
+        <br><br>
+        <input type="file" name="" id="">
+        <br><br>
+        <input type="color" name="" id="">
+        <br><br>
+        <input type="range">
+        <br><br>
+        <input type="search" name="" id="" placeholder="search here">
+
+        <!-- For Security Question -->
+
+        <h2>Registration form with Security Question</h2>
+
+        <form method="post">
+            <!-- Other form fields go here -->
+
+            <!-- Security Question -->
+            <label for="security_question">Security Question:</label>
+            <select id="security_question" name="security_question" required>
+                <option value="">Select a security question</option>
+                <option value="pet">What is your pet's name?</option>
+                <option value="city">In which city were you born?</option>
+                <option value="school">What is the name of your elementary school?</option>
+
+            </select>
+
+            <!-- Answer to Security Question -->
+            <label for="security_answer">Answer:</label>
+            <input type="text" id="security_answer" name="security_answer" required>
+            <input type="submit" value="Submit">
+
+        </form>
+    </form>
+</div>
