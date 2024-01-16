@@ -13,6 +13,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Add SSH key to agent
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/github
+          chmod 600 ~/.ssh/github
+          eval "$(ssh-agent -s)"
+          ssh-add ~/.ssh/github
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
