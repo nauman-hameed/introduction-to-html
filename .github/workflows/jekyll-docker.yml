@@ -10,19 +10,23 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Copy SSH key
+        run: |
+          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
       - name: Checkout 🛎️
         uses: actions/checkout@v3
-     
-      - name: Build
+
+      - name: Build the site in the jekyll/builder container
         run: |
           docker run \
           -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
           jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
 
-      - name: Deploy
-        uses: peaceiris/actions-github-pages@v3.1.12
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: SHA256:88+Rwe3JieSq0H0c8Uc8AHiOGpMvW0019MvQUsylhww
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ github.workspace }}/_site
-          publish_branch: main
-          
+          publish_branch: ${{ github.head_ref }}
