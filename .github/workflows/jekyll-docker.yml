@@ -8,7 +8,13 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
         
-      - name: Deploy
-        uses: northflank/deploy-to-northflank@v1.0.0
+      # - name: Deploy
+      #   uses: northflank/deploy-to-northflank@v1.0.0
+
+      - name: Netlify Actions
+        uses: nwtgck/actions-netlify@v2.1.0
+        with:
+          publish-dir: ./path
+          
     
           
