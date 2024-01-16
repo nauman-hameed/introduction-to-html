@@ -19,6 +19,10 @@ jobs:
 
       - name: GitHub Pages v3
         uses: peaceiris/actions-github-pages@v3.1.12
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ github.workspace }}/_site
+
 
       # - name: Deploy to GitHub Pages
       #   uses: JamesIves/github-pages-deploy-action@3.7.1
