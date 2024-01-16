@@ -21,7 +21,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
             Branch: gh-pages
-            Folder: /srv/jekyll/_site
+            Folder: /_site:/srv/jekyll/_site \
 
           
     
