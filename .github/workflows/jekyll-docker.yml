@@ -22,7 +22,7 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-github-pages@v3.1.12
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          deploy_key: ${{ secrets.deploy_key }}
           publish_dir: ${{ github.workspace }}/_site
           publish_branch: main
           
