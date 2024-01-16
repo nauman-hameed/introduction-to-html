@@ -17,10 +17,11 @@ jobs:
       # - name: Deploy
       #   uses: northflank/deploy-to-northflank@v1.0.0
 
-      # - name: Deploy to GitHub Pages
-      #   uses: JamesIves/github-pages-deploy-action@3.7.1
-      #   with:
-      #       BRANCH: gh-pages
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+            Branch: gh-pages
+            Folder: jekyll/builder
 
           
     
