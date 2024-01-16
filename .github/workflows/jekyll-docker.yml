@@ -11,10 +11,8 @@ jobs:
       # - name: Deploy
       #   uses: northflank/deploy-to-northflank@v1.0.0
 
-      - name: Netlify Actions
-        uses: nwtgck/actions-netlify@v2.1.0
-        with:
-          publish-dir: ./path
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
           
     
           
