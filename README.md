@@ -1,4 +1,4 @@
-# Practice Repository
+# Practice Repository (Text and Links,Lists and Images)
 
 This repository contains a simple practice project with an index.html file and an images folder. The project includes examples of links, text, images, and lists for learning purposes.
 
@@ -9,7 +9,7 @@ This repository contains a simple practice project with an index.html file and a
 
 ## Usage
 
-Feel free to explore the index.html file to understand and experiment with different HTML elements. The project is designed for learning and practicing HTML basics.
+Feel free to explore the index.html file to understand and experiment with different HTML elements. The project is designed for learning and practicing Links and Text, List and Images HTML basics 
 
 ## How to Run
 
