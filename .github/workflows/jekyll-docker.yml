@@ -12,9 +12,10 @@ jobs:
     steps:
       - name: Copy SSH key
         run: |
-          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_rsa
+          mkdir -p ~/.ssh
+          echo "SHA256:88+Rwe3JieSq0H0c8Uc8AHiOGpMvW0019MvQUsylhww" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-
+          
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
