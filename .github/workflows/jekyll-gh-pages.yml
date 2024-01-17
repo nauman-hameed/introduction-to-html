@@ -18,6 +18,8 @@ jobs:
           mkdir -p $HOME/.ssh
           echo "${{ secrets.DEPLOY_KEY }}" > $HOME/.ssh/github
           chmod 600 $HOME/.ssh/github
+          ssh-keyscan github.com >> $HOME/.ssh/known_hosts
+          chmod 644 $HOME/.ssh/known_hosts
           eval "$(ssh-agent -s)"
           ssh-add $HOME/.ssh/github
 
