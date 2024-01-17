@@ -1,30 +1,43 @@
-<div><!-- Forms and forms -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form and Input Elements</title>
+</head>
+
+<body>
     <form action="">
-        First Name <input type="name" size="20" maxlength="20" required>
+        First Name <input type="text" name="firstName" size="20" maxlength="20" required>
         <br><br>
-        Last Name <input type="name" size="20" maxlength="20" required>
+        Last Name <input type="text" name="lastName" size="20" maxlength="20" required>
         <br><br>
-        Email <input type="email" name="" id="" size="25" required>
+        Email <input type="email" name="email" size="25" required>
         <br><br>
-        <input type="image" src="./Images/pexels-photo-674010.jpeg" height="100px" width="100px">
-        Password <input type="password" size="22" required>
+        Password <input type="password" name="password" size="22" required>
         <br><br>
         <br><br>
-        <textarea name="" id="" cols="30" rows="10" placeholder="Your Comment here"></textarea>
+        <textarea name="CommentBox" cols="30" rows="10" placeholder="Your Comment here"></textarea>
         <br><br>
         Select One:
-        <input type="radio" name="a" id="a">Bike
-        <input type="radio" name="a" id="a">Cycle
-        <input type="radio" name="a" id="a">Jaaaz
+        <input type="radio" name="bike" value="Bike">Bike
+        <input type="radio" name="cycle" value="Cycle">Cycle
+        <input type="radio" name="jaaaz" value="Jaaaz">Jaaaz
         <br><br>
-        <input type="date" name="" id="">
+        Date of Birth
+        <input type="date" name="date">
         <br><br>
-        <input type="file" name="" id="">
+        Import File
+        <input type="file" name="file">
         <br><br>
-        <input type="color" name="" id="">
+        Select Color
+        <input type="color" name="color">
         <br><br>
+        Select Range
         <input type="range">
         <br><br>
+
         <input type="search" name="" id="" placeholder="search here">
 
         <!-- For Security Question -->
@@ -43,7 +56,6 @@
                 <option value="school">What is the name of your elementary school?</option>
 
             </select>
-
             <!-- Answer to Security Question -->
             <label for="security_answer">Answer:</label>
             <input type="text" id="security_answer" name="security_answer" required>
@@ -51,4 +63,6 @@
 
         </form>
     </form>
-</div>
+</body>
+
+</html>
