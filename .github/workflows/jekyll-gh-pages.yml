@@ -1,35 +1,25 @@
-name: Deploy to GitHub Pages
-
+name: Build and Deploy
 on:
   push:
     branches:
       - '*'
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    
-    # - name: Deploy to GitHub Pages
-    #   run: |
-    #     git config --global user.email "actions@github.com"
-    #     git config --global user.name "GitHub Actions"
-    #     git push --force "https://${ACCESS_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:gh-pages
-    #   env:
-    #     ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
 
-    - name: Build the site in the jekyll/builder container
-      run: |
+      - name: Build the site in the jekyll/builder container
+        run: |
           docker run \
           -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
           jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ github.workspace }}/_site
-          publish_branch: gh-pages 
+          publish_branch: gh-pages  # Specify the branch you want to deploy to
