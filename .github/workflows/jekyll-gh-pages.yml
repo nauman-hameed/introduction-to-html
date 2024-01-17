@@ -13,12 +13,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Copy SSH key
+      - name: Add SSH key to agent
         run: |
-          mkdir -p ~/.ssh
-          echo "SHA256:88+Rwe3JieSq0H0c8Uc8AHiOGpMvW0019MvQUsylhww" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          chmod 700 ~/.ssh/id_rsa
+          mkdir -p /github/home/.ssh
+          echo "${{ secrets.DEPLOY_KEY }}" > /github/home/.ssh/github
+          chmod 600 /github/home/.ssh/github
+          eval "$(ssh-agent -s)"
+          ssh-add /github/home/.ssh/github
 
 
       - name: Deploy to GitHub Pages
