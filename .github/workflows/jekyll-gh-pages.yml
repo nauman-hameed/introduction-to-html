@@ -18,6 +18,8 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+          chmod 700 ~/.ssh/id_rsa
+
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
