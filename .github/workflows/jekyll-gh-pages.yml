@@ -16,7 +16,7 @@ jobs:
       - name: Copy SSH key
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_rsa
+          echo "SHA256:88+Rwe3JieSq0H0c8Uc8AHiOGpMvW0019MvQUsylhww" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           chmod 700 ~/.ssh/id_rsa
 
