@@ -21,5 +21,3 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ${{ github.workspace }}/_site
-          publish_branch: gh-pages  # Specify the branch you want to deploy to
