@@ -15,11 +15,11 @@ jobs:
 
       - name: Add SSH key to agent
         run: |
-          mkdir -p /github/home/.ssh
-          echo "${{ secrets.DEPLOY_KEY }}" > /github/home/.ssh/github
-          chmod 600 /github/home/.ssh/github
+          mkdir -p $HOME/.ssh
+          echo "${{ secrets.DEPLOY_KEY }}" > $HOME/.ssh/github
+          chmod 600 $HOME/.ssh/github
           eval "$(ssh-agent -s)"
-          ssh-add /github/home/.ssh/github
+          ssh-add $HOME/.ssh/github
 
 
       - name: Deploy to GitHub Pages
