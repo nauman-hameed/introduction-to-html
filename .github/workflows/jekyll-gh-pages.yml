@@ -10,22 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Add SSH key to agent
-        run: |
-          mkdir -p $HOME/.ssh
-          echo "${{ secrets.DEPLOY_KEY }}" > $HOME/.ssh/github
-          chmod 600 $HOME/.ssh/github
-          ssh-keyscan github.com >> $HOME/.ssh/known_hosts
-          chmod 644 $HOME/.ssh/known_hosts
-          eval "$(ssh-agent -s)"
-          ssh-add $HOME/.ssh/github
-
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          deploy_key: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .  # Deploy all files in the repository without any build step
+    - name: Deploy to GitHub Pages
+      run: |
+        git push --force "https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:gh-pages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
