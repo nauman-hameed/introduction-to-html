@@ -20,11 +20,6 @@
         <br><br>
         <textarea name="CommentBox" cols="30" rows="10" placeholder="Your Comment here"></textarea>
         <br><br>
-        Select One:
-        <input type="radio" name="bike" value="Bike">Bike
-        <input type="radio" name="cycle" value="Cycle">Cycle
-        <input type="radio" name="jaaaz" value="Jaaaz">Jaaaz
-        <br><br>
         Date of Birth
         <input type="date" name="date">
         <br><br>
@@ -37,32 +32,39 @@
         Select Range
         <input type="range">
         <br><br>
-
-        <input type="search" name="" id="" placeholder="search here">
-
+        Search Here
+        <input type="search" name="" id="SearchInput">
+        <br><br>
+        Add Your HomePage URL
+        <input type="url">
+        <br><br>
+        Select One:
+        <input type="radio" name="vehcile" value="Bike">Bike
+        <input type="radio" name="vehcile" value="Cycle">Cycle
+        <input type="radio" name="vehcile" value="Jaaaz">Jaaaz
+        <br><br>
+        Select more than One:
+        <input type="checkbox" name="vehcile1" id="vehcile1">vehcile 1
+        <input type="checkbox" name="vehcile2" id="vehcile2">vehcile 2
+        <input type="checkbox" name="vehcile3" id="vehcile3">vehcile 3
         <!-- For Security Question -->
-
-        <h2>Registration form with Security Question</h2>
-
+        <h2>For Security Question</h2>
         <form method="post">
-            <!-- Other form fields go here -->
-
-            <!-- Security Question -->
             <label for="security_question">Security Question:</label>
             <select id="security_question" name="security_question" required>
                 <option value="">Select a security question</option>
-                <option value="pet">What is your pet's name?</option>
+                <option value="pet">What is your pet name?</option>
                 <option value="city">In which city were you born?</option>
-                <option value="school">What is the name of your elementary school?</option>
-
+                <option value="school">What is name of your school?</option>
             </select>
             <!-- Answer to Security Question -->
             <label for="security_answer">Answer:</label>
             <input type="text" id="security_answer" name="security_answer" required>
+            <input type="reset">
             <input type="submit" value="Submit">
-
         </form>
     </form>
+    <br>
 </body>
 
 </html>
